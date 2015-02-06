@@ -7,7 +7,8 @@ nnoremap <F8> :call system("ctags -R .")<CR>:silent UpdateTypesFile<CR>:echo "ta
 nnoremap <F9> :call RunCmake()<CR>
 fun! RunCmake()
   if filereadable('cmake.sh')
-    call system('./cmake.sh')
+    let l:output = system('./cmake.sh')
+    echom l:output
   endif
 endfun
 
